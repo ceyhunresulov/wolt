@@ -1,0 +1,222 @@
+{
+  "persons": [
+    {
+      "id": 1,
+      "name": "ceyhun",
+      "email": "ceyhun@gmail.com",
+      "password": "1",
+      "role": "owner"
+    },
+    {
+      "id": 2,
+      "name": "yusif",
+      "email": "yusif@gmail.com",
+      "password": "12",
+      "role": "owner"
+    },
+    {
+      "id": 3,
+      "name": "eltac",
+      "email": "eltac@gmail.com",
+      "password": "123",
+      "role": "user"
+    },
+    {
+      "id": 4,
+      "name": "nurlan",
+      "email": "nurlan@gmail.com",
+      "password": "1234",
+      "role": "courier"
+    },
+    {
+      "id": 5,
+      "name": "asif",
+      "email": "asif@gmail.com",
+      "password": "12345",
+      "role": "owner"
+    },
+    {
+      "id": 6,
+      "name": "ferhad",
+      "email": "ferhad@gamil.com",
+      "password": "f12",
+      "role": "user"
+    },
+    {
+      "id": 7,
+      "name": "resad",
+      "email": "resad@gamil.com",
+      "password": "123456",
+      "role": "owner"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Amerikan",
+      "image": "cat1.avif"
+    },
+    {
+      "id": 2,
+      "name": "Salat",
+      "image": "cat2.avif"
+    },
+    {
+      "id": 3,
+      "name": "Burger",
+      "image": "cat3.avif"
+    },
+    {
+      "id": 4,
+      "name": "Desert",
+      "image": "cat4.avif"
+    },
+    {
+      "id": 5,
+      "name": "Dondurma",
+      "image": "cat5.avif"
+    },
+    {
+      "id": 6,
+      "name": "Dürümlər",
+      "image": "cat6.avif"
+    },
+    {
+      "id": 7,
+      "name": "Pizza",
+      "image": "cat7.avif"
+    },
+    {
+      "id": 8,
+      "name": "Kafe",
+      "image": "cat8.avif"
+    },
+    {
+      "id": 9,
+      "name": "Toyuq",
+      "image": "cat9.avif"
+    },
+    {
+      "id": 10,
+      "name": "Dönər",
+      "image": "cat10.avif"
+    },
+    {
+      "id": 11,
+      "name": "Şorba",
+      "image": "cat11.avif"
+    },
+    {
+      "id": 12,
+      "name": "Kabab",
+      "image": "cat12.avif"
+    },
+    {
+      "id": 13,
+      "name": "Balıq",
+      "image": "cat13.avif"
+    }
+  
+  ],
+  "restaurants": [
+    {
+      "id": 1,
+      "ownewId": 5,
+      "name": "Teazy",
+      "img": "rest1.avif",
+      "address": "iceri seher",
+      "description": "Hər qurtumda ayrı ləzzət!",
+      "courierMoney": "2.50",
+      "contact": 5566666666,
+      "worktime": "08:00-18:00"
+    },
+    {
+      "id": 2,
+      "ownewId": 5,
+      "name": "Avtoş Dönər",
+      "img": "rest2.avif",
+      "address": "Lev Tolstoy 191",
+      "description": "Fərqli dad ",
+      "courierMoney": "2.00",
+      "contact": 5566666666,
+      "worktime": "08:00-18:00"
+    },
+    {
+      "id": 3,
+      "ownewId": 5,
+      "name": "Payitaht Restoran",
+      "img": "rest3.avif",
+      "address": "Narimanov dist., Kazim Kazimzade str.7",
+      "description": "Qədim Osmanlı yeni Payitahtda",
+      "courierMoney": "3.00",
+      "contact": 5566666666,
+      "worktime": "08:00-18:00"
+    },
+    {
+      "id": 4,
+      "ownewId": 5,
+      "name": "KFC",
+      "img": "rest4.avif",
+      "address": "Sahil",
+      "description": "So Good",
+      "courierMoney": "2.50",
+      "contact": 5566666666,
+      "worktime": "08:00-18:00"
+    },
+    {
+      "id": 5,
+      "ownewId": 5,
+      "name": "50 Qəpik",
+      "img": "rest5.avif",
+      "address": "28 May",
+      "description": "Sərfəli və ləzzətli",
+      "courierMoney": "1.50",
+      "contact": 5566666666,
+      "worktime": "08:00-18:00"
+    },
+    {
+      "id": 6,
+      "ownewId": 5,
+      "name": "McDonald's & McCafe",
+      "img": "rest6.avif",
+      "address": "340 Nizami St",
+      "description": "I'm lovin' it!",
+      "courierMoney": "2.00",
+      "contact": 5566666666,
+      "worktime": "08:00-18:00"
+    },
+    {
+      "id": 7,
+      "ownewId": 5,
+      "name": "Shaurma",
+      "img": "rest7.avif",
+      "address": "Nizami Street 81",
+      "description": "1998-ci ildən",
+      "courierMoney": "2.50",
+      "contact": 5566666666,
+      "worktime": "08:00-18:00"
+    },
+    {
+      "id": 8,
+      "ownewId": 5,
+      "name": "MADO Fountain Square",
+      "img": "rest8.avif",
+      "address": "Mardanov Qardashlari 3",
+      "description": "",
+      "courierMoney": "3.50",
+      "contact": 5566666666,
+      "worktime": "08:00-18:00"
+    },
+    {
+      "id": 9,
+      "ownewId": 5,
+      "name": "Du Monde Coffee",
+      "img": "rest9.avif",
+      "address": "Khatai distr., Yusif Safarov 18",
+      "description": "Keyfiyyətli qəhvə və kreativ içkilər Sizlər üçün",
+      "courierMoney": "4.00",
+      "contact": 5566666666,
+      "worktime": "08:00-18:00"
+    }
+  ]
+}
