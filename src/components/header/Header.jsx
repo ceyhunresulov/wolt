@@ -1,13 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, {useState } from "react";
 import SearchBar from "./SearchBar";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-function Header({ setModul, setShowSigns, setShowLogin, person, setPerson }) {
+function Header({ setModul, setShowSigns, setShowLogin, person, setPerson,checkLink}) {
   const [close, setClose] = useState(false);
-  const checkLink = useRef(
-    window.location.pathname === "/restaurant" ? true : false
-  );
   const onButtonLogin = () => {
     setModul(true);
     setShowSigns(false);
@@ -28,18 +25,18 @@ function Header({ setModul, setShowSigns, setShowLogin, person, setPerson }) {
   return (
     <header
       className={`${
-        checkLink.current ? "absolute" : "bg-white border-b fixed"
+        checkLink ? "absolute" : "bg-white border-b fixed"
       }  border-solid border-[#2021251f] h-16 lg:h-18 w-full top-0 left-0 z-10`}
     >
       <div
         id="container"
         className={`${
-          checkLink.current ? "!w-3/4" : ""
+          checkLink ? "!w-3/4" : ""
         } flex justify-between items-center h-full`}
       >
         <div className="w-1/3 flex justify-start">
-          <div>
-            {(checkLink.current && (
+          <Link to='/'>
+            {(checkLink && (
               <h1 className="font-cursive text-white text-2xl p-0 font-bold">
                 WOLT
               </h1>
@@ -50,12 +47,12 @@ function Header({ setModul, setShowSigns, setShowLogin, person, setPerson }) {
                 className="w-full scale-75 lg:scale-90 h-full"
               />
             )}
-          </div>
+          </Link>
         </div>
         <div className="w-1/3 flex justify-center">
-          <SearchBar checkLink={checkLink.current} />
+          <SearchBar checkLink={checkLink} />
         </div>
-        <div className="w-1/3 flex justify-end">
+        <div className="w-1/3 h-full flex justify-end">
           {(person && (
             <div className="h-full flex items-center">
               <div className="rounded-full border-2 bg-amber-900 h-4/5 w-[56px] flex items-center justify-center cursor-pointer">

@@ -4,6 +4,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      width: {
+        desktop: "96%",
+      },
       screens: {
         sm: "640px",
         md: "768px",
@@ -16,9 +19,13 @@ module.exports = {
       },
       colors: {
         none: "none",
+        blue: "#009DE0",
       },
       fontFamily: {
         cursive: "cursive",
+      },
+      backgroundColor: {
+        lightBlue: "#EBF7FD",
       },
     },
   },

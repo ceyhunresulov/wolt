@@ -2,13 +2,17 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineSearch, AiOutlineCloseCircle } from "react-icons/ai";
 import CategoriesList from "./CategoriesList";
+import Product from "./Product";
 import RestaurantInfo from "./RestaurantInfo";
+import OrderModal from "./OrderModal";
 
 function RestaurantMenu() {
   const workTime = useRef();
   const workTimeEl = useRef();
   const categoriesEl = useRef();
+  const [clickedProduct, setCLickedProduct] = useState(false);
   const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
   const [restaurant, setRestaurant] = useState({ img: "rest5.avif" });
   const [closeIcon, setCloseIcon] = useState(false);
   const [border, setBorder] = useState(false);
@@ -23,15 +27,29 @@ function RestaurantMenu() {
     setBorder(false);
   };
   useEffect(() => {
-    window.scrollTo(window.pageYOffset,0)
+    window.scrollTo(window.pageYOffset, 0);
+    const currentRestaurant = JSON.parse(
+      localStorage.getItem("currentRestaurant")
+    );
     const fetchData = async () => {
-      const { data: data } = await axios.get(
-        "http://localhost:3000/categories"
+      const { data: categoriesData } = await axios.get(
+        `http://localhost:3000/categories`
       );
-      setCategories(data || []);
+      const { data: productsData } = await axios.get(
+        "http://localhost:3000/products"
+      );
+      const newData = categoriesData.filter((item) =>
+        item.restId.includes(currentRestaurant.id)
+      );
+      const filteredProducts = productsData.filter((product) =>
+        product.restId.includes(currentRestaurant.id)
+      );
+      console.log(filteredProducts);
+      setCategories(newData || []);
+      setProducts(filteredProducts || []);
+      setRestaurant(currentRestaurant);
     };
     fetchData();
-    setRestaurant(JSON.parse(localStorage.getItem("currentRestaurant")));
   }, []);
   useEffect(() => {
     const onScroll = () => {
@@ -52,13 +70,13 @@ function RestaurantMenu() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  console.log(restaurant.img);
   return (
     <>
+      <OrderModal product={clickedProduct} />
       <div
         className="relative w-full h-[96vh] bg-no-repeat bg-center bg-cover flex justify-center"
         style={{
-          backgroundImage: `url(${require(`../../assets/images/${restaurant.img}`)})`,
+          backgroundImage: `url(${restaurant.img})`,
         }}
       >
         <div className="w-full h-full bg-gray-900 opacity-25 absolute left-0 top-0"></div>
@@ -75,7 +93,9 @@ function RestaurantMenu() {
             <h1 className="text-white text-7xl font-cursive font-black mb-4 leading-relaxed">
               {restaurant.name}
             </h1>
-            <p className="text-3xl text-white font-bold">{restaurant.description}</p>
+            <p className="text-3xl text-white font-bold">
+              {restaurant.description}
+            </p>
           </div>
         </div>
         <div className="absolute w-3/4 h-[114px] bottom-[-57px] bg-white rounded-xl shadow-lg border flex items-center justify-center">
@@ -100,10 +120,10 @@ function RestaurantMenu() {
           </form>
         </div>
       </div>
-      <div className="border w-3/4 mx-auto mt-14 border-black flex pt-20 relative">
+      <div className="w-3/4 mx-auto mt-14 border-black flex pt-20 relative justify-between">
         <ul
           ref={categoriesEl}
-          className="w-1/4 h-full sticky top-32 flex flex-col items-start"
+          className="w-1/12 h-full sticky top-32 flex flex-col items-start"
         >
           {categories.map((category) => (
             <CategoriesList
@@ -113,20 +133,29 @@ function RestaurantMenu() {
             />
           ))}
         </ul>
-        <div className="border w-2/4 h-full">
-          <section id="Burger" className="h-[130vh] bg-red-500">
-            salam
-          </section>
-
-          <section id="McCafe" className="h-[110vh] bg-black-500">
-            salam
-          </section>
-          <section id="Kartof" className="h-[120vh] bg-cyan-500">
-            salam
-          </section>
+        <div className="w-3/5 h-full px-4 transition-all linear duration-300">
+          {categories.map((item) => (
+            <section
+              key={item.id}
+              id={item.name}
+              className="bg-black-500 pt-24 border-box min-h-screen"
+            >
+              <h2 className="text-3xl my-8 font-bold">{item.name}</h2>
+              {products
+                .filter((product) => product.catId === item.id)
+                .map((item) => (
+                  <Product
+                    key={item.id}
+                    product={item}
+                    restaurant={restaurant}
+                    setCLickedProduct={setCLickedProduct}
+                  />
+                ))}
+            </section>
+          ))}
         </div>
-        <div className="border w-1/4 h-full">
-          <RestaurantInfo restaurant={restaurant}/>
+        <div className="w-1/4 h-full sticky top-32">
+          <RestaurantInfo restaurant={restaurant} />
         </div>
       </div>
     </>

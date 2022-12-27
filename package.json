@@ -19,7 +19,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "watch": "npx tailwindcss -i ./tailwind.css -o ./src/style.css --watch",
-    "build": "npx tailwindcss -i ./tailwind.css -o ./src/style.css"
+    "build": "npx tailwindcss -i ./tailwind.css -o ./src/style.css",
+    "mock":"json-server --watch database/db.json"
   },
   "eslintConfig": {
     "extends": [

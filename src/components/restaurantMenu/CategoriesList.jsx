@@ -1,57 +1,38 @@
-import { useEffect, useRef} from "react";
+import { useEffect, useRef } from "react";
 
 function CategoriesList({ category, categoriesEl }) {
   const clickedEL = useRef();
-  const onMouseOver = () => {
-    clickedEL.current.classList.remove("text-[#202125a3]");
-    clickedEL.current.classList.add("text-black");
-    clickedEL.current.lastChild.classList.remove("w-0");
-    clickedEL.current.lastChild.classList.add("w-full");
-  };
-  const onMouseOut = () => {
-    if (!clickedEL.current.classList.contains("click")) {
-      clickedEL.current.classList.remove("text-black");
-      clickedEL.current.classList.add("text-[#202125a3]");
-      clickedEL.current.lastChild.classList.remove("w-full");
-      clickedEL.current.lastChild.classList.add("w-0");
-    }
-  };
-  const onHandleClick = () => {
-    const outsideClick = [...categoriesEl];
-    let currentEl = outsideClick.splice(category.id - 1, 1);
-    console.log(currentEl);
-    currentEl[0].classList.add("click");
-    outsideClick.forEach((item) => {
-      if (item.classList.contains("text-black")) {
-        item.classList.remove("text-black");
-        item.classList.add("text-[#202125a3]");
-        item.lastChild.classList.remove("w-full");
-        item.lastChild.classList.add("w-0");
-        item.classList.remove("click");
-      }
+
+  const onHandleClick = (e) => {
+    const otherEL = [...categoriesEl];
+    otherEL.forEach((item) => {
+      item.firstChild.classList.remove('text-black')
+      item.lastChild.classList.add('w-0')
     });
+    e.target.classList.add("text-black");
+    e.target.nextElementSibling.classList.remove("w-0");
+    e.target.nextElementSibling.classList.add("w-full");
   };
+
   useEffect(() => {
-    if (category.id == 1) {
-      clickedEL.current.classList.add("text-black");
-      clickedEL.current.classList.add("click");
-      clickedEL.current.lastChild.classList.remove("w-0");
-      clickedEL.current.lastChild.classList.add("w-full");
-    }
-  });
+    const firstEl=categoriesEl[0]
+    firstEl.firstChild.classList.add('text-black')
+    firstEl.lastChild.classList.remove('w-0')
+  },[]);
   return (
     <li
       ref={clickedEL}
-      onMouseOver={onMouseOver}
-      onMouseOut={onMouseOut}
-      onClick={onHandleClick}
-      className={`py-0.5 border-box transition-all linear duration-300 inline text-[#202125a3]`}
+      className={`group py-0.5 border-box transition-all linear duration-300 inline text-[#202125a3]  hover:text-black`}
     >
-      <a href={`#${category.name}`} className="text-sm font-medium">
+      <a
+        onClick={onHandleClick}
+        href={`#${category.name}`}
+        className="text-sm font-medium transition-all linear duration-300"
+      >
         {category.name}
       </a>
       <hr
-        className={`transition-all linear duration-300 h-0 border-t-2 border-black mt-1 w-0`}
+        className={`transition-all linear duration-300 h-0 border-t-2 border-black mt-1 w-0 group-hover:w-full`}
       />
     </li>
   );

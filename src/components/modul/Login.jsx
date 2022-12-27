@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login({ setPerson }) {
+  const navigate = useNavigate();
   const [error, setError] = useState(false);
   const inputName = useRef();
   const inputEmail = useRef();
@@ -22,7 +24,7 @@ function Login({ setPerson }) {
     ) {
       setPerson(checkPerson);
       localStorage.setItem("currentPerson", JSON.stringify(checkPerson));
-      window.location = "/admin";
+      navigate(`/${checkPerson.role}`);
     } else {
       setError(true);
     }

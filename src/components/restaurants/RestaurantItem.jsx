@@ -10,15 +10,11 @@ function RestaurantItem({ img, name, desc, courierMoney, restaurant }) {
     <li className="relative cursor-pointer rounded-lg shadow-md w-full md:w-[49%] lg:w-[32.4%] h-[310px] md:h-[320px] lg:h-[330px] mb-4 flex flex-col justify-between overflow-hidden transition-all ease-in duration-200 hover:scale-105">
       <Link
         onClick={goToRestaurant}
-        to="restaurant"
+        to="/restaurant"
         className="absolute top-0 left-0 w-full h-full"
       ></Link>
       <div className="w-full h-2/3 md:h-3/5">
-        <img
-          src={require(`../../assets/images/${img}`)}
-          alt=""
-          className="h-full w-full object-cover"
-        />
+        <img src={img} alt="" className="h-full w-full object-cover" />
       </div>
       <h3 className="ml-5 text-lg font-semibold">{name}</h3>
       <span className="ml-5 text-sm text-[#202125a3]">{desc}</span>

@@ -26,7 +26,7 @@ function Modul({
       onClick={closedModul}
     >
       <div
-        className="h-3/5 w-3/5 md:w-2/5 lg:h-5/6 lg:w-1/3 !bg-white rounded-xl relative flex justify-start flex-col items-center py-20"
+        className="h-auto w-3/5 md:w-2/5 lg:h-5/6 lg:w-1/3 !bg-white rounded-xl relative flex justify-start flex-col items-center py-20"
         ref={modulEl}
         onClick={(e) => e.stopPropagation()}
       >

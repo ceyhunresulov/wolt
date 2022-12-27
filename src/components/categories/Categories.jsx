@@ -54,13 +54,13 @@ function Categories() {
           <h3 className="font-semibold text-3xl">kategoriyalar</h3>
           <div className="flex">
             <button
-              disabled={checkScroll == 0}
+              disabled={checkScroll === 0}
               onClick={scrollRight}
               className="text-xl lg:text-2xl font-semibold bg-[#009de014]  p-1.5 lg:p-2.5 box-content rounded-full m-1 cursor-pointer "
             >
               <BsArrowLeft
                 className={
-                  checkScroll == 0
+                  checkScroll === 0
                     ? "text-[#009de050]"
                     : "text-[#009DE0] font-extrabold"
                 }
