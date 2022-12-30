@@ -4,12 +4,15 @@ import { AiOutlineSearch, AiOutlineCloseCircle } from "react-icons/ai";
 import CategoriesList from "./CategoriesList";
 import Product from "./Product";
 import RestaurantInfo from "./RestaurantInfo";
-import OrderModal from "./OrderModal";
+import Orders from "./Orders";
 
 function RestaurantMenu() {
   const workTime = useRef();
   const workTimeEl = useRef();
   const categoriesEl = useRef();
+  const [productModal, setProductModal] = useState(true);
+  const [orders, setOrders] = useState([]);
+  const [orderModal, setOrderModal] = useState(false);
   const [clickedProduct, setCLickedProduct] = useState(false);
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
@@ -25,6 +28,10 @@ function RestaurantMenu() {
   };
   const hiddenBorder = () => {
     setBorder(false);
+  };
+  const showOrders = () => {
+    setOrderModal(true);
+    setProductModal(false);
   };
   useEffect(() => {
     window.scrollTo(window.pageYOffset, 0);
@@ -44,7 +51,6 @@ function RestaurantMenu() {
       const filteredProducts = productsData.filter((product) =>
         product.restId.includes(currentRestaurant.id)
       );
-      console.log(filteredProducts);
       setCategories(newData || []);
       setProducts(filteredProducts || []);
       setRestaurant(currentRestaurant);
@@ -72,7 +78,14 @@ function RestaurantMenu() {
   }, []);
   return (
     <>
-      <OrderModal product={clickedProduct} />
+      <Orders
+        product={clickedProduct}
+        orderModal={orderModal}
+        setOrderModal={setOrderModal}
+        orders={orders}
+        setOrders={setOrders}
+        productModal={productModal}
+      />
       <div
         className="relative w-full h-[96vh] bg-no-repeat bg-center bg-cover flex justify-center"
         style={{
@@ -83,11 +96,25 @@ function RestaurantMenu() {
         <div className="lg:w-3/4 h-4/5 pt-[70px] box-border relative">
           <div
             ref={workTimeEl}
-            className="transition-all ease-in duration-300 border-[#2021251f] w-full flex justify-center top-0 left-0 items-center h-[70px] z-40"
+            className="transition-all ease-in duration-300 border-[#2021251f] w-full flex justify-around top-0 left-0 items-center h-[70px] z-40"
           >
             <p ref={workTime} className="text-white text-base font-bold">
               Bu gün açıqdır: {restaurant.worktime}
             </p>
+            <button
+              onClick={showOrders}
+              className={`bg-blue h-14 w-64 rounded-lg px-4 box-border flex justify-between items-center ${
+                !orders.length ? "invisible" : ""
+              }`}
+            >
+              <span className="bg-white px-2 rounded-full text-blue">
+                {orders.reduce((init, curr) => init + curr.count, 0)}
+              </span>
+              <span className="font-semibold text-white">Sifarişə baxın</span>
+              <span className="font-semibold text-white">
+                {orders.reduce((init, curr) => init + curr.price, 0)} AZN
+              </span>
+            </button>
           </div>
           <div className="w-3/4 absolute bottom-0 left-0">
             <h1 className="text-white text-7xl font-cursive font-black mb-4 leading-relaxed">
@@ -149,6 +176,8 @@ function RestaurantMenu() {
                     product={item}
                     restaurant={restaurant}
                     setCLickedProduct={setCLickedProduct}
+                    setOrderModal={setOrderModal}
+                    setProductModal={setProductModal}
                   />
                 ))}
             </section>

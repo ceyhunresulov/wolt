@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 
-function Product({ product, restaurant, setCLickedProduct }) {
+function Product({
+  product,
+  restaurant,
+  setCLickedProduct,
+  setOrderModal,
+  setProductModal,
+}) {
   const [price, setPrice] = useState(
     product.price.find((item) => item.id == restaurant.id).value
   );
   const onHandleClick = () => {
     setCLickedProduct({ ...product, price: price });
+    setProductModal(true);
+    setOrderModal(true);
   };
   return (
     <div
