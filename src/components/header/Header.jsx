@@ -1,9 +1,16 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-function Header({ setModul, setShowSigns, setShowLogin, person, setPerson,checkLink}) {
+function Header({
+  setModul,
+  setShowSigns,
+  setShowLogin,
+  person,
+  setPerson,
+  checkLink,
+}) {
   const [close, setClose] = useState(false);
   const onButtonLogin = () => {
     setModul(true);
@@ -35,7 +42,7 @@ function Header({ setModul, setShowSigns, setShowLogin, person, setPerson,checkL
         } flex justify-between items-center h-full`}
       >
         <div className="w-1/3 flex justify-start">
-          <Link to='/'>
+          <Link to="/">
             {(checkLink && (
               <h1 className="font-cursive text-white text-2xl p-0 font-bold">
                 WOLT
@@ -56,22 +63,33 @@ function Header({ setModul, setShowSigns, setShowLogin, person, setPerson,checkL
           {(person && (
             <div className="h-full flex items-center">
               <div className="rounded-full border-2 bg-amber-900 h-4/5 w-[56px] flex items-center justify-center cursor-pointer">
-                <span className="text-sm text-white">{person.name}</span>
+                <span className="text-2xl text-white">
+                  {person.name[0].toUpperCase()}
+                </span>
               </div>
               <div className="relative ml-2 h-full flex items-center">
                 <IoIosArrowDown
-                  className="text-2xl cursor-pointer text-center"
+                  className={`${
+                    checkLink ? "text-white" : ""
+                  } text-3xl cursor-pointer text-center`}
                   onClick={showClose}
                 ></IoIosArrowDown>
                 <div
-                  className={`absolute transition-all linear duration-200 left-[50%] translate-x-[-50%] bg-gray-200 shadow-xl flex items-center justify-center w-[80px] rounded-lg ${
-                    (close && "h-[60px] bottom-[-60px]") ||
-                    "h-[0] bottom-0 overflow-hidden"
+                  className={`absolute transition-all linear duration-200 left-[50%] translate-x-[-50%] bg-gray-200 shadow-xl flex flex-col items-center justify-center w-[100px] rounded-lg ${
+                    close
+                      ? "h-[70px] bottom-[-70px]"
+                      : "h-[0] bottom-0 overflow-hidden"
                   }`}
                 >
                   <Link
+                    to="/orders"
+                    className="text-center text-lg border-b border-black"
+                  >
+                    Sifarişlər
+                  </Link>
+                  <Link
                     to="/"
-                    className=" text-center text-lg"
+                    className="text-center text-lg"
                     onClick={onHandleClose}
                   >
                     Çıx

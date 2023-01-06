@@ -1,22 +1,41 @@
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { RiDeleteBin6Fill } from "react-icons/ri";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function OrdersItem({ countBtn, setCountBtn, order, setOrders }) {
+function OrdersItem({ order, setOrders, orders, modalEl }) {
+  const [countBtn, setCountBtn] = useState(true);
   const [productCount, setProductCount] = useState(order.count);
   const productMinus = () => {
-    setProductCount(productCount - 1);
+    if (order.count === 1) {
+      setOrders(orders.filter((item) => item.id != order.id));
+    } else {
+      order.count -= 1;
+      setOrders([...orders]);
+    }
   };
   const productPlus = () => {
-    setProductCount(productCount + 1);
+    order.count += 1;
+    setOrders([...orders]);
   };
   const changeOrder = (e) => {
     e.stopPropagation();
     setCountBtn(false);
   };
+  const removeOrder = () => {
+    setOrders(orders.filter((item) => item.id != order.id));
+  };
+  useEffect(() => {
+    document.addEventListener("click", () => {
+      setCountBtn(true);
+    });
+    modalEl.addEventListener("click", () => {
+      setCountBtn(true);
+    });
+  }, []);
   return (
-    <li className="w-full h-14 border mb-8 flex justify-start items-center relative">
+    <li className="w-full h-14 mb-8 flex justify-start items-center relative">
       <div
+        onClick={(e) => setCountBtn(false)}
         className={`h-10 overflow-hidden relative transition-all ease-linear duration-100 ${
           countBtn ? "w-10" : "w-1/3"
         }`}
@@ -29,25 +48,23 @@ function OrdersItem({ countBtn, setCountBtn, order, setOrders }) {
         >
           {order.count}
         </button>
-        <div
-          onClick={(e) => e.stopPropagation()}
-          className="bg-lightBlue w-full h-full p-4 flex justify-between items-center shadow rounded-lg"
-        >
-          <button onClick={productMinus} disabled={productCount == 1}>
+        <div className="bg-lightBlue w-full h-full p-4 flex justify-between items-center shadow rounded-lg">
+          <button onClick={productMinus}>
             <AiOutlineMinus
-              className={`${
-                productCount > 1 ? "bg-white" : ""
-              } rounded-full text-xl text-blue cursor-pointer`}
+              className={`bg-white rounded-full text-xl text-blue cursor-pointer`}
             />
           </button>
-          <span className="text-md text-blue">{productCount}</span>
+          <span className="text-md text-blue">{order.count}</span>
           <button>
             <AiOutlinePlus
               onClick={productPlus}
               className="bg-white rounded-full text-xl text-blue cursor-pointer"
             />
           </button>
-          <RiDeleteBin6Fill className="text-xl text-blue cursor-pointer" />
+          <RiDeleteBin6Fill
+            onClick={removeOrder}
+            className="text-xl text-blue cursor-pointer"
+          />
         </div>
       </div>
       <div className="ml-4">

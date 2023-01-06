@@ -58,7 +58,7 @@ function CurrentRestaurant({ currentRestaurant }) {
         )) ||
           (isCategories && (
             <CurrentCategories restId={currentRestaurant.id} />
-          )) || <Orders />}
+          )) || <Orders restId={currentRestaurant.id} />}
       </div>
     </div>
   );

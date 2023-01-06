@@ -8,6 +8,8 @@ import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Restaurant from "./persons/restaurant/Restaurant";
 import RestaurantMenu from "./restaurantMenu/RestaurantMenu";
+import Orders from "./persons/user/Orders";
+import Courier from "./persons/courier/Courier";
 
 function App() {
   const [modul, setModul] = useState(false);
@@ -19,6 +21,23 @@ function App() {
   return (
     <>
       <Routes>
+        <Route
+          path="/courier"
+          element={
+            <>
+              <Header
+                checkLink={false}
+                modul={modul}
+                setModul={setModul}
+                setShowSigns={setShowSigns}
+                setShowLogin={setShowLogin}
+                person={person}
+                setPerson={setPerson}
+              />
+              <Courier />
+            </>
+          }
+        />
         <Route
           path="/owner"
           element={
@@ -33,6 +52,23 @@ function App() {
                 setPerson={setPerson}
               />
               <Restaurant />
+            </>
+          }
+        />
+        <Route
+          path="/orders"
+          element={
+            <>
+              <Header
+                checkLink={false}
+                modul={modul}
+                setModul={setModul}
+                setShowSigns={setShowSigns}
+                setShowLogin={setShowLogin}
+                person={person}
+                setPerson={setPerson}
+              />
+              <Orders />
             </>
           }
         />

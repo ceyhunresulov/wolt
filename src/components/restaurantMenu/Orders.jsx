@@ -1,7 +1,7 @@
+import { useRef } from "react";
 import { GrFormClose } from "react-icons/gr";
 import OrdersModal from "./OrdersModal";
 import ProductModal from "./ProductModal";
-import { useState } from "react";
 
 function Orders({
   product,
@@ -11,13 +11,11 @@ function Orders({
   setOrders,
   productModal,
 }) {
-  const [countBtn, setCountBtn] = useState(true);
+  const modalEl = useRef();
   const closeModal = () => {
-    if (!productModal) setCountBtn(true);
     setOrderModal(false);
   };
   const onHandleClickModal = (e) => {
-    if (!productModal) setCountBtn(true);
     e.stopPropagation();
   };
 
@@ -28,9 +26,10 @@ function Orders({
         orderModal
           ? "h-full visible opacity-100"
           : "h-full invisible opacity-0 mt-[100px]"
-      } w-full bg-[#20212554] fixed z-50 bottom-0 flex  justify-center items-center transition-all ease-in duration-200`}
+      } w-full bg-[#20212554] fixed z-50 bottom-0 flex justify-center items-center transition-all ease-in duration-200`}
     >
       <div
+        ref={modalEl}
         onClick={onHandleClickModal}
         className="bg-white h-5/6 w-1/3 rounded-2xl overflow-hidden relative"
       >
@@ -48,10 +47,9 @@ function Orders({
           />
         )) || (
           <OrdersModal
-            countBtn={countBtn}
-            setCountBtn={setCountBtn}
             orders={orders}
             setOrders={setOrders}
+            modalEl={modalEl.current}
           />
         )}
       </div>

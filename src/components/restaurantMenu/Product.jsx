@@ -25,7 +25,7 @@ function Product({
           <h1 className="text-2xl mb-3">{product.name}</h1>
           <span className="text-blue">{price} AZN</span>
         </div>
-        <div className="h-full w-2/5 h-[180px]">
+        <div className="h-full w-2/5">
           <img src={product.img} alt="" className="h-full w-full" />
         </div>
       </div>

@@ -24,7 +24,7 @@ function Login({ setPerson }) {
     ) {
       setPerson(checkPerson);
       localStorage.setItem("currentPerson", JSON.stringify(checkPerson));
-      navigate(`/${checkPerson.role}`);
+      if (checkPerson.role != "user") navigate(`/${checkPerson.role}`);
     } else {
       setError(true);
     }

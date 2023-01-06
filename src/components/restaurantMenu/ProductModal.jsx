@@ -22,7 +22,7 @@ function ProductModal({
         {
           id: product.id,
           count: productCount,
-          price: productCount * product.price,
+          price: product.price,
           name: product.name,
           img: product.img,
         },
@@ -33,7 +33,7 @@ function ProductModal({
         {
           id: product.id,
           count: productCount,
-          price: productCount * product.price,
+          price: product.price,
           name: product.name,
           img: product.img,
         },

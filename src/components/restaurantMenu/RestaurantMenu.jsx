@@ -112,7 +112,11 @@ function RestaurantMenu() {
               </span>
               <span className="font-semibold text-white">Sifarişə baxın</span>
               <span className="font-semibold text-white">
-                {orders.reduce((init, curr) => init + curr.price, 0)} AZN
+                {orders.reduce(
+                  (init, curr) => init + curr.price * curr.count,
+                  0
+                )}{" "}
+                AZN
               </span>
             </button>
           </div>
