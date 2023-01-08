@@ -2,7 +2,7 @@ import axios from "axios";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Login({ setPerson }) {
+function Login({ setPerson, setModul }) {
   const navigate = useNavigate();
   const [error, setError] = useState(false);
   const inputName = useRef();
@@ -23,6 +23,10 @@ function Login({ setPerson }) {
       checkPerson.password === password
     ) {
       setPerson(checkPerson);
+      inputName.current.value = "";
+      inputEmail.current.value = "";
+      inputPassword.current.value = "";
+      setModul(false);
       localStorage.setItem("currentPerson", JSON.stringify(checkPerson));
       if (checkPerson.role != "user") navigate(`/${checkPerson.role}`);
     } else {

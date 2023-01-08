@@ -38,7 +38,7 @@ function Modul({
           <SignUp setShowSigns={setShowSigns} setShowLogin={setShowLogin} />
         )) ||
           null}
-        {showLogin && <Login setPerson={setPerson} />}
+        {showLogin && <Login setPerson={setPerson} setModul={setModul} />}
       </div>
     </div>
   );

@@ -28,17 +28,16 @@ function Orders() {
         <ul className="border p-4 box-border mb-3 shadow-lg" key={order.id}>
           <span className="block text-xl text-blue">
             Status:{" "}
-            {!order.courId && !order.delivered
+            {!order.confirmCourier
               ? "Baxılır"
-              : order.courId && !order.delivered
+              : order.courId && order.confirmCourier && !order.delivered
               ? "Sifariş yoldadır"
-              : order.courId && !order.delivered
+              : order.courId && order.confirmCourier && order.delivered
               ? "Sifariş çatdırıldı"
               : ""}
           </span>
           <span className="text-xl font-semibold">
-            Restoran:{" "}
-            {restaurants.find((item) => item.id == order.restId).name}
+            Restoran: {restaurants.find((item) => item.id == order.restId).name}
           </span>
           {order.orderList.map((item) => (
             <OrderItem key={item.id} order={item} />

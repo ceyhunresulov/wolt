@@ -15,7 +15,6 @@ function Order({ order, setOrders }) {
   const confirmOrders = async () => {
     if (currCourier) {
       order.courId = currCourier;
-      order.confirmCourier = null;
       await axios.put(`http://localhost:3000/orders/${order.id}`, order);
       const { data: updatedOrders } = await axios.get(
         "http://localhost:3000/orders"
@@ -75,7 +74,7 @@ function Order({ order, setOrders }) {
               couriers.length > 0 &&
               couriers.find((item) => item.id == order.courId).name
             }`) ||
-            "Yeni kuryer seçin"}
+            "Kuryer seçin"}
         </span>
         <form action="" className="flex items-center">
           <select

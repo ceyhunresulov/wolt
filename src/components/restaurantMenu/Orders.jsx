@@ -50,6 +50,7 @@ function Orders({
             orders={orders}
             setOrders={setOrders}
             modalEl={modalEl.current}
+            setOrderModal={setOrderModal}
           />
         )}
       </div>
