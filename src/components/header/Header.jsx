@@ -10,6 +10,7 @@ function Header({
   person,
   setPerson,
   checkLink,
+  searchBar,
 }) {
   const [close, setClose] = useState(false);
   const onButtonLogin = () => {
@@ -36,10 +37,9 @@ function Header({
       }  border-solid border-[#2021251f] h-16 lg:h-18 w-full top-0 left-0 z-10`}
     >
       <div
-        id="container"
         className={`${
           checkLink ? "!w-3/4" : ""
-        } flex justify-between items-center h-full`}
+        } flex justify-between items-center h-full mx-auto w-mobil`}
       >
         <div className="w-1/3 flex justify-start">
           <Link to="/">
@@ -51,13 +51,13 @@ function Header({
               <img
                 src="wolt.png"
                 alt=""
-                className="w-full scale-75 lg:scale-90 h-full"
+                className="w-full scale-75 -translate-x-3 lg:translate-x-0 lg:scale-90 h-full "
               />
             )}
           </Link>
         </div>
         <div className="w-1/3 flex justify-center">
-          <SearchBar checkLink={checkLink} />
+          {searchBar && <SearchBar checkLink={checkLink} />}
         </div>
         <div className="w-1/3 h-full flex justify-end">
           {(person && (

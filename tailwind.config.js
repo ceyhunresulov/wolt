@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       width: {
         desktop: "96%",
+        mobil: "93%",
       },
       screens: {
         sm: "640px",

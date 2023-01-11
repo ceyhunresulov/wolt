@@ -7,7 +7,7 @@ function RestaurantItem({ img, name, desc, courierMoney, restaurant }) {
     localStorage.setItem("currentRestaurant", JSON.stringify(restaurant));
   };
   return (
-    <li className="relative cursor-pointer rounded-lg shadow-md w-full md:w-[49%] lg:w-[32.4%] h-[310px] md:h-[320px] lg:h-[330px] mb-4 flex flex-col justify-between overflow-hidden transition-all ease-in duration-200 hover:scale-105">
+    <li className="relative cursor-pointer rounded-lg shadow-md w-full md:w-[49%] lg:w-[32.4%] !h-[310px] md:h-[320px] lg:h-[330px] mb-4 flex flex-col justify-between overflow-hidden transition-all ease-in duration-200 hover:scale-105">
       <Link
         onClick={goToRestaurant}
         to="/restaurant"

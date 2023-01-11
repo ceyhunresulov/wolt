@@ -18,15 +18,13 @@ function Modul({
   };
   return (
     <div
-      className={
-        modul
-          ? "h-screen w-screen bg-[#20212554] z-20 fixed bottom-0 left-0 flex items-center justify-center transition-all linear duration-500 overflow-hidden transition-all linear duration-300"
-          : "w-screen h-0 transition-all linear duration-300 bg-[#20212554] z-20 fixed bottom-0 left-0 flex items-center justify-center overflow-hidden"
-      }
+      className={`${
+        modul ? "h-screen" : "h-0"
+      } w-screen bg-[#20212554] z-20 fixed bottom-0 left-0 flex items-end sm:items-center justify-center  transition-all linear duration-300 overflow-hidden`}
       onClick={closedModul}
     >
       <div
-        className="h-auto w-3/5 md:w-2/5 lg:h-5/6 lg:w-1/3 !bg-white rounded-xl relative flex justify-start flex-col items-center py-20"
+        className="h-[95vh] w-full sm:w-3/5 lg:w-1/3 !bg-white rounded-xl relative flex justify-start flex-col items-center py-20"
         ref={modulEl}
         onClick={(e) => e.stopPropagation()}
       >

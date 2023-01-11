@@ -11,7 +11,7 @@ function Restaurants() {
   }, []);
 
   return (
-    <div id="container" className="!mt-16 sm:bg-red">
+    <div className="!mt-16 w-mobil mx-auto md:w-desktop">
       <h2 className="text-3xl font-semibold !my-5">Bütün Restoranlar</h2>
       <ul className="w-full md:flex justify-between flex-wrap">
         {restaurants.map((restaurant) => (

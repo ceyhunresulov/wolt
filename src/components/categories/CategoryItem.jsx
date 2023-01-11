@@ -2,7 +2,7 @@ import React from "react";
 
 function CategoryItem({ name, img }) {
   return (
-    <li className="w-[140px] md:w-[180px] lg:w-[230px] rounded-lg overflow-hidden shadow mr-4 h-[95%] cursor-pointer hover:scale-105 transition-all duration-200 ease-in">
+    <li className="w-[140px] md:w-[180px] lg:w-[230px] rounded-lg overflow-hidden shadow mr-2 md:mr-4 h-[95%] cursor-pointer hover:scale-105 transition-all duration-200 ease-in">
       <div className="w-full h-2/3 lg:h-3/4">
         <img
           src={require(`../../assets/images/${img}`)}

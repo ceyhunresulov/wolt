@@ -102,79 +102,121 @@
   "categories": [
     {
       "id": 1,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Amerikan",
       "image": "cat1.avif"
     },
     {
       "id": 2,
-      "restId": [1, 5],
+      "restId": [
+        1,
+        5
+      ],
       "name": "Salat",
       "image": "cat2.avif"
     },
     {
       "id": 3,
-      "restId": [4, 6, 7],
+      "restId": [
+        4,
+        6,
+        7
+      ],
       "name": "Burger",
       "image": "cat3.avif"
     },
     {
       "id": 4,
-      "restId": [5],
+      "restId": [
+        5
+      ],
       "name": "Desert",
       "image": "cat4.avif"
     },
     {
       "id": 5,
-      "restId": [6, 8],
+      "restId": [
+        6,
+        8
+      ],
       "name": "Dondurma",
       "image": "cat5.avif"
     },
     {
       "id": 6,
-      "restId": [3, 5],
+      "restId": [
+        3,
+        5
+      ],
       "name": "Dürümlər",
       "image": "cat6.avif"
     },
     {
       "id": 7,
-      "restId": [4, 7],
+      "restId": [
+        4,
+        7
+      ],
       "name": "Pizza",
       "image": "cat7.avif"
     },
     {
       "id": 8,
-      "restId": [8, 9],
+      "restId": [
+        8,
+        9
+      ],
       "name": "Kafe",
       "image": "cat8.avif"
     },
     {
       "id": 9,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Toyuq",
       "image": "cat9.avif"
     },
     {
       "id": 10,
-      "restId": [2, 6, 7],
+      "restId": [
+        2,
+        6,
+        7
+      ],
       "name": "Dönər",
       "image": "cat10.avif"
     },
     {
       "id": 11,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Şorba",
       "image": "cat11.avif"
     },
     {
       "id": 12,
-      "restId": [3, 5],
+      "restId": [
+        3,
+        5
+      ],
       "name": "Kabab",
       "image": "cat12.avif"
     },
     {
       "id": 13,
-      "restId": [1],
+      "restId": [
+        1
+      ],
       "name": "Balıq",
       "image": "cat13.avif"
     }
@@ -183,7 +225,11 @@
     {
       "id": 1,
       "catId": 2,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Toyuqlu Sezar",
       "price": [
         {
@@ -204,7 +250,10 @@
     {
       "id": 2,
       "catId": 2,
-      "restId": [3, 5],
+      "restId": [
+        3,
+        5
+      ],
       "name": "Tərəvəz Salatı",
       "price": [
         {
@@ -221,7 +270,11 @@
     {
       "id": 3,
       "catId": 2,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Çoban Salatı",
       "price": [
         {
@@ -242,7 +295,11 @@
     {
       "id": 4,
       "catId": 2,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Gavurdag Salatı",
       "price": [
         {
@@ -263,7 +320,11 @@
     {
       "id": 5,
       "catId": 2,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Fındıqlı Salat Avokado ilə",
       "price": [
         {
@@ -284,7 +345,11 @@
     {
       "id": 6,
       "catId": 2,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Ingilis Salatı",
       "price": [
         {
@@ -305,7 +370,11 @@
     {
       "id": 7,
       "catId": 2,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Mimoza Salatı",
       "price": [
         {
@@ -326,7 +395,11 @@
     {
       "id": 8,
       "catId": 2,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Paytaxt Salatı (200 qr)",
       "price": [
         {
@@ -347,7 +420,11 @@
     {
       "id": 9,
       "catId": 2,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Qarğıdalı Salatı (200 qr)",
       "price": [
         {
@@ -368,7 +445,11 @@
     {
       "id": 10,
       "catId": 1,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Böyük Big Tasty (ət) menyu",
       "price": [
         {
@@ -389,7 +470,11 @@
     {
       "id": 11,
       "catId": 1,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Böyük Big Mac menyu",
       "price": [
         {
@@ -410,7 +495,11 @@
     {
       "id": 12,
       "catId": 3,
-      "restId": [4, 6, 7],
+      "restId": [
+        4,
+        6,
+        7
+      ],
       "name": "Jack Burger",
       "price": [
         {
@@ -431,7 +520,11 @@
     {
       "id": 13,
       "catId": 3,
-      "restId": [4, 6, 7],
+      "restId": [
+        4,
+        6,
+        7
+      ],
       "name": "Adana Burger",
       "price": [
         {
@@ -452,7 +545,11 @@
     {
       "id": 14,
       "catId": 3,
-      "restId": [4, 6, 7],
+      "restId": [
+        4,
+        6,
+        7
+      ],
       "name": "Garlic Mushroom Burger",
       "price": [
         {
@@ -473,7 +570,11 @@
     {
       "id": 15,
       "catId": 3,
-      "restId": [4, 6, 7],
+      "restId": [
+        4,
+        6,
+        7
+      ],
       "name": "Falafel Burger",
       "price": [
         {
@@ -494,7 +595,9 @@
     {
       "id": 16,
       "catId": 4,
-      "restId": [5],
+      "restId": [
+        5
+      ],
       "name": "Fıstıqlı",
       "price": [
         {
@@ -507,7 +610,9 @@
     {
       "id": 17,
       "catId": 4,
-      "restId": [5],
+      "restId": [
+        5
+      ],
       "name": "Profiterol",
       "price": [
         {
@@ -520,7 +625,9 @@
     {
       "id": 18,
       "catId": 4,
-      "restId": [5],
+      "restId": [
+        5
+      ],
       "name": "Brownie",
       "price": [
         {
@@ -533,7 +640,10 @@
     {
       "id": 19,
       "catId": 5,
-      "restId": [6, 8],
+      "restId": [
+        6,
+        8
+      ],
       "name": "Algida® Şokoladlı",
       "price": [
         {
@@ -550,7 +660,10 @@
     {
       "id": 20,
       "catId": 5,
-      "restId": [6, 8],
+      "restId": [
+        6,
+        8
+      ],
       "name": "Algida® Şokoladlı",
       "price": [
         {
@@ -567,7 +680,10 @@
     {
       "id": 21,
       "catId": 6,
-      "restId": [3, 5],
+      "restId": [
+        3,
+        5
+      ],
       "name": "Adana Dürümü",
       "price": [
         {
@@ -584,7 +700,10 @@
     {
       "id": 22,
       "catId": 6,
-      "restId": [3, 5],
+      "restId": [
+        3,
+        5
+      ],
       "name": "Ciyər Şiş Dürümü",
       "price": [
         {
@@ -601,7 +720,10 @@
     {
       "id": 23,
       "catId": 7,
-      "restId": [4, 7],
+      "restId": [
+        4,
+        7
+      ],
       "name": "Pizza Marqarita",
       "price": [
         {
@@ -618,7 +740,10 @@
     {
       "id": 24,
       "catId": 7,
-      "restId": [4, 7],
+      "restId": [
+        4,
+        7
+      ],
       "name": "Toyuqlu Pizza",
       "price": [
         {
@@ -635,7 +760,10 @@
     {
       "id": 25,
       "catId": 7,
-      "restId": [4, 7],
+      "restId": [
+        4,
+        7
+      ],
       "name": "Hawaiian Pizza",
       "price": [
         {
@@ -652,7 +780,10 @@
     {
       "id": 26,
       "catId": 8,
-      "restId": [8, 9],
+      "restId": [
+        8,
+        9
+      ],
       "name": "Kapuçino",
       "price": [
         {
@@ -669,7 +800,10 @@
     {
       "id": 27,
       "catId": 8,
-      "restId": [8, 9],
+      "restId": [
+        8,
+        9
+      ],
       "name": "Latte",
       "price": [
         {
@@ -686,7 +820,10 @@
     {
       "id": 28,
       "catId": 8,
-      "restId": [8, 9],
+      "restId": [
+        8,
+        9
+      ],
       "name": "Raf",
       "price": [
         {
@@ -703,7 +840,11 @@
     {
       "id": 29,
       "catId": 9,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Toyuq Köftəsi",
       "price": [
         {
@@ -724,7 +865,11 @@
     {
       "id": 30,
       "catId": 9,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Toyuq Dönəri Çörəkdə",
       "price": [
         {
@@ -745,7 +890,11 @@
     {
       "id": 31,
       "catId": 10,
-      "restId": [2, 6, 7],
+      "restId": [
+        2,
+        6,
+        7
+      ],
       "name": "Köz Ət Dönəri Çörəkdə",
       "price": [
         {
@@ -766,7 +915,11 @@
     {
       "id": 32,
       "catId": 10,
-      "restId": [2, 6, 7],
+      "restId": [
+        2,
+        6,
+        7
+      ],
       "name": "Pendirli Dönər Toyuq ilə Çörəkdə",
       "price": [
         {
@@ -787,7 +940,11 @@
     {
       "id": 33,
       "catId": 11,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Mərci Şorbası",
       "price": [
         {
@@ -808,7 +965,11 @@
     {
       "id": 34,
       "catId": 11,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Toyuq Şorbası",
       "price": [
         {
@@ -829,7 +990,10 @@
     {
       "id": 35,
       "catId": 12,
-      "restId": [3, 5],
+      "restId": [
+        3,
+        5
+      ],
       "name": "Urfa Kababı",
       "price": [
         {
@@ -846,7 +1010,11 @@
     {
       "id": 36,
       "catId": 12,
-      "restId": [1, 3, 5],
+      "restId": [
+        1,
+        3,
+        5
+      ],
       "name": "Toyuq Şiş Kababı",
       "price": [
         {
@@ -867,7 +1035,9 @@
     {
       "id": 37,
       "catId": 13,
-      "restId": [1],
+      "restId": [
+        1
+      ],
       "name": "Tavada Çupara Balığı",
       "price": [
         {
@@ -880,7 +1050,9 @@
     {
       "id": 38,
       "catId": 2,
-      "restId": [1],
+      "restId": [
+        1
+      ],
       "name": "qara zeytun",
       "price": [
         {
@@ -893,7 +1065,9 @@
     {
       "id": 39,
       "catId": 13,
-      "restId": [1],
+      "restId": [
+        1
+      ],
       "name": "Şamayka",
       "price": [
         {
@@ -906,7 +1080,9 @@
     {
       "id": 40,
       "catId": 13,
-      "restId": [1],
+      "restId": [
+        1
+      ],
       "name": "Kilkə",
       "price": [
         {
@@ -919,7 +1095,9 @@
     {
       "id": 41,
       "catId": 10,
-      "restId": [2],
+      "restId": [
+        2
+      ],
       "name": "Lavasda et doner",
       "price": [
         {
@@ -1037,7 +1215,7 @@
       "userId": 14,
       "restId": 1,
       "courId": "9",
-      "confirmCourier": false,
+      "confirmCourier": true,
       "delivered": false,
       "address": "zabrat1",
       "phone": "0519938888",

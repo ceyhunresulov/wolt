@@ -33,6 +33,7 @@ function App() {
                 setShowLogin={setShowLogin}
                 person={person}
                 setPerson={setPerson}
+                searchBar={false}
               />
               <Courier />
             </>

@@ -125,7 +125,7 @@ function Courier() {
           </div>
           <div className="w-desktop mx-auto border-t-4 pt-2 box-border">
             <h1 className="text-center text-2xl font-semibold mb-3 justify-self-start">
-              Sifarşlər
+              Sifarişlər
             </h1>
             <ul>
               {products.map((product) => (

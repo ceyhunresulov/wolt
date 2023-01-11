@@ -46,51 +46,50 @@ function Categories() {
 
   return (
     <>
-      <div id="container" className="!mt-48">
+      <div className="!mt-48 mx-auto w-mobil md:w-desktop">
         <h1 className="font-cursive font-extrabold text-5xl mb-8">
           Restoranlar-Bakı
         </h1>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mb-4">
           <h3 className="font-semibold text-3xl">kategoriyalar</h3>
           <div className="flex">
             <button
               disabled={checkScroll === 0}
               onClick={scrollRight}
-              className="text-xl lg:text-2xl font-semibold bg-[#009de014]  p-1.5 lg:p-2.5 box-content rounded-full m-1 cursor-pointer "
+              className="text-xl lg:text-2xl font-semibold bg-[#009de014]  p-1.5 lg:p-2.5 box-content rounded-full m-1 cursor-pointer hidden xxl:block"
             >
               <BsArrowLeft
-                className={
+                className={`${
                   checkScroll === 0
                     ? "text-[#009de050]"
                     : "text-[#009DE0] font-extrabold"
-                }
+                }`}
               />
             </button>
             <button
               disabled={disabledRight}
               onClick={scrollLeft}
-              className="text-xl lg:text-2xl font-semibold bg-[#009de014] p-1.5 lg:p-2.5 box-content rounded-full m-1 cursor-pointer"
+              className="text-xl lg:text-2xl font-semibold bg-[#009de014] p-1.5 lg:p-2.5 box-content rounded-full m-1 cursor-pointer  hidden xxl:block"
             >
               <BsArrowRight
-                className={
+                className={`${
                   disabledRight
                     ? "text-[#009de050]"
                     : "text-[#009DE0] font-extrabold"
-                }
+                }`}
               />
             </button>
           </div>
         </div>
       </div>
-      <div className="w-full overflow-hidden">
+      <div className="overflow-hidden w-full xxl:overflow-auto border overflow-x-scroll snap-x">
         <div
           ref={categoriesContainer}
-          className="relative h-[210px] md:h-[270px] lg:h-[350px]"
-          id="container"
+          className="relative w-mobil h-[210px] md:h-[270px] lg:h-[350px] border border-blue md:w-desktop mx-auto snap-center shrink-0 "
         >
           <ul
             ref={categoriesBox}
-            className={`absolute top-0 left-[0px] h-full flex items-center transition-all linear duration-500 scroll-auto`}
+            className={`absolute top-0 left-[0px] h-full flex items-center transition-all linear duration-500 overflow-x-scroll`}
           >
             {categories.map((category) => (
               <CategoryItem

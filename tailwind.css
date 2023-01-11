@@ -5,6 +5,7 @@
 @layer base {
   ::-webkit-scrollbar {
     width: 0;
+    height: 0;
   }
   html {
     margin: 0;
