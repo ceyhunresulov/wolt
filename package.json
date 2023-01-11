@@ -17,10 +17,10 @@
   "scripts": {
     "start": "react-scripts start",
     "test": "react-scripts test",
+    "build": "react-scripts build",
     "eject": "react-scripts eject",
     "watch": "npx tailwindcss -i ./tailwind.css -o ./src/style.css --watch",
-    "build": "npx tailwindcss -i ./tailwind.css -o ./src/style.css",
-    "mock":"json-server --watch database/db.json"
+    "mock": "json-server --watch database/db.json"
   },
   "eslintConfig": {
     "extends": [
