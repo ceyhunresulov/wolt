@@ -11,16 +11,17 @@ function Categories() {
   const [checkScroll, setCheckScroll] = useState(0);
   const [disabledRight, setDisabledRight] = useState(false);
   useEffect(() => {
-    axios.get("http://localhost:3000/categories").then((res) => {
+    axios.get("/db2.json").then((res) => {
       setCategories(res.data || []);
     });
   }, []);
 
   const scrollLeft = () => {
+    categoriesBox.current.lastChild.style.marginRight = 0;
     let categoriesContainerWidth = categoriesContainer.current.offsetWidth;
-    let scrollSize = checkScroll - categoriesContainerWidth - 19;
+    let scrollSize = checkScroll - categoriesContainerWidth + 3;
     let categoriesBoxWidth = categoriesBox.current.offsetWidth;
-    if (categoriesBoxWidth - -scrollSize < categoriesContainerWidth - 19) {
+    if (categoriesBoxWidth - -scrollSize < categoriesContainerWidth + 3) {
       setDisabledRight(categoriesBoxWidth - -scrollSize);
       setCheckScroll(checkScroll - (categoriesBoxWidth - -scrollSize));
     } else {
@@ -30,7 +31,7 @@ function Categories() {
 
   const scrollRight = () => {
     let categoriesContainerWidth = categoriesContainer.current.offsetWidth;
-    let scrollSize = checkScroll + categoriesContainerWidth + 19;
+    let scrollSize = checkScroll + categoriesContainerWidth - 3;
     if (disabledRight) {
       setCheckScroll(checkScroll + disabledRight);
     } else {
@@ -82,10 +83,10 @@ function Categories() {
           </div>
         </div>
       </div>
-      <div className="overflow-hidden w-full xxl:overflow-auto border overflow-x-scroll snap-x">
+      <div className="overflow-hidden w-full overflow-x-scroll snap-x">
         <div
           ref={categoriesContainer}
-          className="relative w-mobil h-[210px] md:h-[270px] lg:h-[350px] border border-blue md:w-desktop mx-auto snap-center shrink-0 "
+          className="relative w-mobil h-[210px] md:h-[270px] lg:h-[350px] md:w-desktop mx-auto snap-center shrink-0 "
         >
           <ul
             ref={categoriesBox}
