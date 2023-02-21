@@ -1,17 +1,13 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+
+import {  useSelector } from "react-redux";
 import RestaurantItem from "./RestaurantItem";
 
 function Restaurants() {
-  const [restaurants, setRestaurants] = useState([]);
-  useEffect(() => {
-    axios.get("http://localhost:3000/restaurants").then((res) => {
-      setRestaurants(res.data || []);
-    });
-  }, []);
+  const restaurants = useSelector((state) => state.restaurants);
+
 
   return (
-    <div className="!mt-16 w-mobil mx-auto md:w-desktop">
+    <div className="!mt-16 w-mobil mx-auto md:w-full">
       <h2 className="text-3xl font-semibold !my-5">Bütün Restoranlar</h2>
       <ul className="w-full md:flex justify-between flex-wrap">
         {restaurants.map((restaurant) => (

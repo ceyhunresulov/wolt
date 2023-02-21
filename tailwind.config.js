@@ -3,12 +3,16 @@ module.exports = {
   ode: "jit",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    fontFamily: {
+      title: ["Fredoka One, cursive"],
+    },
     extend: {
       width: {
         desktop: "96%",
         mobil: "93%",
       },
       screens: {
+        xs: "450px",
         sm: "640px",
         md: "768px",
         lg: "1024px",
@@ -20,13 +24,17 @@ module.exports = {
       },
       colors: {
         none: "none",
-        blue: "#009DE0",
+        firstColor: "#009DE0",
+        secondaryColor: "#202125a3",
+        thirdColor: "#202125",
       },
       fontFamily: {
         cursive: "cursive",
       },
       backgroundColor: {
-        lightBlue: "#EBF7FD",
+        bgFirst: "#009de014",
+        bgFirstHover: "#009de029",
+        bgSecondary: "#2021251F",
       },
     },
   },
