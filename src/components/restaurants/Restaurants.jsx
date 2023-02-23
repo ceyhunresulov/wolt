@@ -7,9 +7,9 @@ function Restaurants() {
 
 
   return (
-    <div className="!mt-16 w-mobil mx-auto md:w-full">
-      <h2 className="text-3xl font-semibold !my-5">Bütün Restoranlar</h2>
-      <ul className="w-full md:flex justify-between flex-wrap">
+    <div className="mx-auto w-full">
+      <h2 className="font-fredoka text-3xl text-thirdColor mb-4">Bütün restoranlar</h2>
+      <ul className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {restaurants.map((restaurant) => (
           <RestaurantItem
             restaurant={restaurant}

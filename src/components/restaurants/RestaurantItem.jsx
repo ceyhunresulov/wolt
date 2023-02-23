@@ -7,20 +7,20 @@ function RestaurantItem({ img, name, desc, courierMoney, restaurant }) {
     localStorage.setItem("currentRestaurant", JSON.stringify(restaurant));
   };
   return (
-    <li className="relative cursor-pointer rounded-lg shadow-md w-full md:w-[49%] lg:w-[32.4%] !h-[310px] md:h-[320px] lg:h-[330px] mb-4 flex flex-col justify-between overflow-hidden transition-all ease-in duration-200 hover:scale-105">
+    <li className="rest-card group">
       <Link
         onClick={goToRestaurant}
         to="/restaurant"
         className="absolute top-0 left-0 w-full h-full"
       ></Link>
-      <div className="w-full h-2/3 md:h-3/5">
-        <img src={img} alt="" className="h-full w-full object-cover" />
+      <div className="w-full h-2/3 md:h-3/5 overflow-hidden">
+        <img src={img} alt="" className="transition-all ease-in duration-200 h-full w-full object-cover group-hover:scale-[1.03]" />
       </div>
       <h3 className="ml-5 text-lg font-semibold">{name}</h3>
       <span className="ml-5 text-sm text-[#202125a3]">{desc}</span>
-      <div className="h-8 flex items-center py-1 px-5 box-border border-t border-[#2021251f] border-dashed">
+      <div className="h-8 text-xs flex items-center py-1 px-5 box-border border-t border-[#2021251f] border-dashed">
         <IoBicycleSharp className="text-[#202125a3]" />
-        <span className="p-0 text-[#202125a3] m-4">{courierMoney} AZN</span>
+        <span className="p-0 text-xs text-[#202125a3] m-4">{courierMoney} AZN</span>
       </div>
     </li>
   );
