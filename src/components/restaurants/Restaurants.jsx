@@ -18,6 +18,7 @@ function Restaurants() {
             name={restaurant.name}
             desc={restaurant.description}
             courierMoney={restaurant.courierMoney}
+            id={restaurant.id}
           />
         ))}
       </ul>

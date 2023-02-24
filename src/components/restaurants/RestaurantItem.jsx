@@ -2,17 +2,12 @@ import React from "react";
 import { IoBicycleSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
-function RestaurantItem({ img, name, desc, courierMoney, restaurant }) {
+function RestaurantItem({ img, name, desc, courierMoney, restaurant,id }) {
   const goToRestaurant = () => {
     localStorage.setItem("currentRestaurant", JSON.stringify(restaurant));
   };
   return (
-    <li className="rest-card group">
-      <Link
-        onClick={goToRestaurant}
-        to="/restaurant"
-        className="absolute top-0 left-0 w-full h-full"
-      ></Link>
+    <Link to={`/${id}`} className="rest-card group">
       <div className="w-full h-2/3 md:h-3/5 overflow-hidden">
         <img src={img} alt="" className="transition-all ease-in duration-200 h-full w-full object-cover group-hover:scale-[1.03]" />
       </div>
@@ -22,7 +17,7 @@ function RestaurantItem({ img, name, desc, courierMoney, restaurant }) {
         <IoBicycleSharp className="text-[#202125a3]" />
         <span className="p-0 text-xs text-[#202125a3] m-4">{courierMoney} AZN</span>
       </div>
-    </li>
+    </Link>
   );
 }
 

@@ -4,3 +4,10 @@ export const getRestaurants = (payload) => {
     payload,
   };
 };
+
+export const getCurrentRestaurant = (payload)=>{
+  return{
+    type:'GET_CURRENT_RESTAURANT',
+    payload
+  }
+}

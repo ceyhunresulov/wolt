@@ -1,4 +1,3 @@
-import React, { useEffect, useRef } from "react";
 import { TbArrowNarrowLeft, TbArrowNarrowRight } from "react-icons/tb";
 import { useState } from "react";
 import { useSelector } from "react-redux";
@@ -21,7 +20,9 @@ function Categories() {
     <>
       <div className="mx-auto w-full mb-4 ">
         <div className="flex justify-between items-center mt-12">
-          <h3 className="font-fredoka text-3xl text-thirdColor">Kateqoriyalar</h3>
+          <h3 className="font-fredoka text-3xl text-thirdColor">
+            Kateqoriyalar
+          </h3>
           <div className="flex">
             <button
               onClick={leftClick}
@@ -78,7 +79,7 @@ function Categories() {
             slidesPerView: 5,
           },
           1280: {
-            slidesPerView: 6
+            slidesPerView: 6,
           },
         }}
       >

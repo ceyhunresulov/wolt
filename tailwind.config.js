@@ -11,12 +11,13 @@ module.exports = {
         desktop: "96%",
         mobil: "93%",
         tablet: "90%",
+        smTablet:'1100px'
       },
       screens: {
         xs: "450px",
         sm: "640px",
         md: "800px",
-        lg: "1024px",
+        lg: "1100px",
         xl: "1280px",
         xxl: "1536px",
       },
@@ -37,6 +38,7 @@ module.exports = {
         bgFirst: "#009de014",
         bgFirstHover: "#009de029",
         bgSecondary: "#2021251F",
+        bgSecondaryLight: '#f2f2f28a',
         bgFourthColor: '#141414'
       },
     },

@@ -1,8 +1,9 @@
 import { IoLocation } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 import { useEffect, useState } from "react";
+import WoltLogo from "../logo/WoltLogo";
 
-function Logo() {
+function Logo({ address, logoColor, customerBox }) {
   const [addressBar, setAddressBar] = useState(true);
 
   useEffect(() => {
@@ -16,13 +17,11 @@ function Logo() {
   });
   return (
     <div className="1/4 md:w-1/3 flex-1 md:flex items-center relative">
-      <img
-        className="h-full scale-90 sm:scale-95 lg:scale-100"
-        src={`${require("../../images/logo.png")}`}
-        alt=""
-      />
+      <div className="h-full flex items-center">
+        <WoltLogo dark={logoColor} />
+      </div>
       <div
-        className={`customer ${
+        className={`customer ${customerBox} ${
           addressBar
             ? "h-28 xs:h-[30] md:h-full"
             : "h-[57px] xs:h-[61px] md:h-full"
@@ -33,12 +32,8 @@ function Logo() {
             <IoLocation className="text-2xl text-firstColor" />
           </div>
           <div className="flex flex-col ml-4">
-            <p className="text-secondaryColor text-sm">
-              Kimə çatdırılacaq
-            </p>
-            <span className="text-firstColor text-sm font-medium">
-              Bakı
-            </span>
+            <p className="text-secondaryColor text-sm">Kimə çatdırılacaq</p>
+            <span className="text-firstColor text-sm font-medium">Bakı</span>
           </div>
           <IoIosArrowDown className="ml-4 text-firstColor text-xl" />
         </div>

@@ -1,3 +1,4 @@
+import WoltLogo from "../logo/WoltLogo";
 import Nav from "./Nav";
 
 const navData = [
@@ -44,11 +45,7 @@ function Footer() {
     <div className="min-h-96 py-10 box-border bg-bgFourthColor flex items-center justify-center mt-6 relative">
       <div className="w-desktop mx-auto md:flex justify-between">
         <div className="mb-12 md:mb-0">
-          <img
-            className="scale-75 -ml-3 mb-4"
-            src={require("../../images/logo_footer.png")}
-            alt=""
-          />
+          <WoltLogo dark={false}/>
           <div className="flex md:block">
             <a href="" className="w-40 h-10 block mr-4 md:mb-4">
               <img
