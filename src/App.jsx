@@ -6,7 +6,7 @@ import CurrentRestaurant from "./pages/CurrentRestaurant";
 
 function App() {
   return (
-    <div className="overflow-hidden relative">
+    <div className="overflow-x-hidden relative">
       <Header/>
       <Routes>
         <Route path="/" element={<Home />} />

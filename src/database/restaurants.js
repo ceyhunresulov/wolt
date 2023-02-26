@@ -7,7 +7,7 @@ export const restaurants = [
     address: "İçəri Şəhər",
     description: "Hər qurtumda ayrı ləzzət!",
     courierMoney: "2.50",
-    contact: 5566666666,
+    contact: 'xxxxxxxxxx',
     worktime: "08:00-18:00",
   },
   {
@@ -18,7 +18,7 @@ export const restaurants = [
     address: "Lev Tolstoy 191",
     description: "Fərqli dad ",
     courierMoney: "2.00",
-    contact: 5566666666,
+    contact: 'xxxxxxxxxx',
     worktime: "08:00-18:00",
   },
   {
@@ -29,7 +29,7 @@ export const restaurants = [
     address: "Narimanov dist., Kazim Kazimzade str.7",
     description: "Qədim Osmanlı yeni Payitahtda",
     courierMoney: "3.00",
-    contact: 5566666666,
+    contact: 'xxxxxxxxxx',
     worktime: "08:00-18:00",
   },
   {
@@ -40,7 +40,7 @@ export const restaurants = [
     address: "Sahil",
     description: "So Good",
     courierMoney: "2.50",
-    contact: 5566666666,
+    contact: 'xxxxxxxxxx',
     worktime: "08:00-18:00",
   },
   {
@@ -51,7 +51,7 @@ export const restaurants = [
     address: "28 May",
     description: "Sərfəli və ləzzətli",
     courierMoney: "1.50",
-    contact: 5566666666,
+    contact: 'xxxxxxxxxx',
     worktime: "08:00-18:00",
   },
   {
@@ -62,7 +62,7 @@ export const restaurants = [
     address: "340 Nizami St",
     description: "I'm lovin' it!",
     courierMoney: "2.00",
-    contact: 5566666666,
+    contact: 'xxxxxxxxxx',
     worktime: "08:00-18:00",
   },
   {
@@ -73,8 +73,8 @@ export const restaurants = [
     address: "Nizami Street 81",
     description: "1998-ci ildən",
     courierMoney: "2.50",
-    contact: 5566666666,
-    worktime: "08:00-18:00",
+    contact: 'xxxxxxxxxx',
+    worktime: "09:00-18:00",
   },
   {
     id: 8,
@@ -84,8 +84,8 @@ export const restaurants = [
     address: "Mardanov Qardashlari 3",
     description: "",
     courierMoney: "3.50",
-    contact: 5566666666,
-    worktime: "08:00-18:00",
+    contact: 'xxxxxxxxxx',
+    worktime: "07:00-16:00",
   },
   {
     id: 9,
@@ -95,7 +95,7 @@ export const restaurants = [
     address: "Khatai distr., Yusif Safarov 18",
     description: "Keyfiyyətli qəhvə və kreativ içkilər Sizlər üçün",
     courierMoney: "4.00",
-    contact: 5566666666,
-    worktime: "08:00-18:00",
+    contact: 'xxxxxxxxxx',
+    worktime: "09:00-20:00",
   },
 ];

@@ -113,7 +113,7 @@ function RestaurantMenu() {
           </p>
         </div>
       </div>
-      {/* <div className="absolute w-3/4 h-[114px] bottom-[-57px] bg-white rounded-xl shadow-lg border flex items-center justify-center">
+      <div className="absolute w-3/4 h-[114px] bottom-[-57px] bg-white rounded-xl shadow-lg border flex items-center justify-center">
         <form
           action=""
           className={`bg-[#c8c8c833] w-[284px] h-[48px] border-2 rounded-md flex items-center justify-center ${
@@ -133,48 +133,48 @@ function RestaurantMenu() {
             className={`text-base ${closeIcon ? "visible" : "invisible"}`}
           />
         </form>
-      </div> */}
+      </div>
     </div>
-    //   <div className="w-3/4 mx-auto mt-14 border-black flex pt-20 relative justify-between">
-    //     <ul
-    //       ref={categoriesEl}
-    //       className="w-1/12 h-full sticky top-32 flex flex-col items-start"
-    //     >
-    //       {categories.map((category) => (
-    //         <CategoriesList
-    //           key={category.id}
-    //           category={category}
-    //           categoriesEl={categoriesEl.current.children}
-    //         />
-    //       ))}
-    //     </ul>
-    //    <div className="w-3/5 h-full px-4 transition-all linear duration-300">
-    //       {categories.map((item) => (
-    //         <section
-    //           key={item.id}
-    //           id={item.name}
-    //           className="bg-black-500 pt-24 border-box min-h-screen"
-    //         >
-    //           <h2 className="text-3xl my-8 font-bold">{item.name}</h2>
-    //           {products
-    //             .filter((product) => product.catId === item.id)
-    //             .map((item) => (
-    //               <Product
-    //                 key={item.id}
-    //                 product={item}
-    //                 restaurant={restaurant}
-    //                 setCLickedProduct={setCLickedProduct}
-    //                 setOrderModal={setOrderModal}
-    //                 setProductModal={setProductModal}
-    //               />
-    //             ))}
-    //         </section>
-    //       ))}
-    //     </div>
-    //     <div className="w-1/4 h-full sticky top-32">
-    //       <RestaurantInfo restaurant={restaurant} />
-    //     </div>
-    //   </div>
+      // <div className="w-3/4 mx-auto mt-14 border-black flex pt-20 relative justify-between">
+      //   <ul
+      //     ref={categoriesEl}
+      //     className="w-1/12 h-full sticky top-32 flex flex-col items-start"
+      //   >
+      //     {categories.map((category) => (
+      //       <CategoriesList
+      //         key={category.id}
+      //         category={category}
+      //         categoriesEl={categoriesEl.current.children}
+      //       />
+      //     ))}
+      //   </ul>
+      //  <div className="w-3/5 h-full px-4 transition-all linear duration-300">
+      //     {categories.map((item) => (
+      //       <section
+      //         key={item.id}
+      //         id={item.name}
+      //         className="bg-black-500 pt-24 border-box min-h-screen"
+      //       >
+      //         <h2 className="text-3xl my-8 font-bold">{item.name}</h2>
+      //         {products
+      //           .filter((product) => product.catId === item.id)
+      //           .map((item) => (
+      //             <Product
+      //               key={item.id}
+      //               product={item}
+      //               restaurant={restaurant}
+      //               setCLickedProduct={setCLickedProduct}
+      //               setOrderModal={setOrderModal}
+      //               setProductModal={setProductModal}
+      //             />
+      //           ))}
+      //       </section>
+      //     ))}
+      //   </div>
+      //   <div className="w-1/4 h-full sticky top-32">
+      //     <RestaurantInfo restaurant={restaurant} />
+      //   </div>
+      // </div>
     // </>
   );
 }

@@ -42,8 +42,8 @@ const navData = [
 
 function Footer() {
   return (
-    <div className="min-h-96 py-10 box-border bg-bgFourthColor flex items-center justify-center mt-6 relative">
-      <div className="w-desktop mx-auto md:flex justify-between">
+    <div className="min-h-96 py-10 box-border bg-bgFourthColor flex items-center justify-center mt-6 relative z-20">
+      <div className="w-desktop lg:w-smTablet mx-auto md:flex justify-between">
         <div className="mb-12 md:mb-0">
           <WoltLogo dark={false}/>
           <div className="flex md:block">

@@ -4,14 +4,14 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
-      fredoka: ["Fredoka One, cursive, poppins"],
+      fredoka: ["Fredoka One, cursive"],
     },
     extend: {
       width: {
         desktop: "96%",
         mobil: "93%",
         tablet: "90%",
-        smTablet:'1100px'
+        smTablet: "1100px",
       },
       screens: {
         xs: "450px",
@@ -32,14 +32,15 @@ module.exports = {
         borderColor: "#202125f",
         fourthColor: "#20212533",
         fiftyColor: "#20212514",
-        sixthColor: '#FFFFFFB8'
+        sixthColor: "#FFFFFFB8",
+        red: "#E0321F",
       },
       backgroundColor: {
         bgFirst: "#009de014",
         bgFirstHover: "#009de029",
         bgSecondary: "#2021251F",
-        bgSecondaryLight: '#f2f2f28a',
-        bgFourthColor: '#141414'
+        bgSecondaryLight: "#f2f2f28a",
+        bgFourthColor: "#141414",
       },
     },
   },

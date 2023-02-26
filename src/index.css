@@ -5,6 +5,10 @@
 @tailwind utilities;
 
 @layer base {
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 0;
+  }
   html {
     margin: 0;
     padding: 0;
@@ -13,6 +17,8 @@
       Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
       sans-serif;
     font-size: 14px;
+
+    scroll-behavior: smooth;
   }
 
   @screen sm {
@@ -71,8 +77,6 @@
   .form {
     @apply w-full xs:w-11/12 sm:w-2/3 md:w-full lg:w-2/3 h-8 xs:h-9 md:h-10 rounded-3xl flex items-center justify-evenly px-1 xs:px-2;
   }
-
-
 
   /* RESTAURANTS */
   .rest-card {
