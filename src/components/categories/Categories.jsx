@@ -69,7 +69,7 @@ function Categories() {
         }}
         spaceBetween={15}
         slidesPerView={3}
-        onReachEnd={() => setDisabledRight(true)}
+        onReachEnd={() => categories.length > 6 && setDisabledRight(true)}
         onReachBeginning={() => setCheckScroll(true)}
         breakpoints={{
           640: {

@@ -4,12 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCurrentRestaurant } from "../../redux/actions/restaurantsAction";
 import { IoBicycleSharp } from "react-icons/io5";
 import { menuHeaderStyleAction } from "../../redux/actions/headerStyleAction";
+import { modalOrdersAction } from "../../redux/actions/modalAction";
 
 function FirstSection() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const [restaurant] = useSelector((state) => state.restaurants);
   const [scroll, setScroll] = useState(false);
+
+
+  const openOrdersModal=()=>{
+    dispatch(modalOrdersAction())
+  }
 
   useEffect(() => {
     window.scrollTo(window.pageYOffset, 0);
@@ -62,6 +68,7 @@ function FirstSection() {
           </div>
           <div className="w-full lg:w-1/3 flex justify-end">
             <button
+            onClick={openOrdersModal}
               className={`bg-firstColor text-white h-12 lg:h-14 w-full lg:w-64 rounded-lg px-4 box-border flex justify-between items-center ${
                 false ? "invisible" : ""
               }`}

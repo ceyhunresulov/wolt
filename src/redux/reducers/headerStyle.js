@@ -13,6 +13,8 @@ const initialState = {
 
 const headerStyleReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "HOME":
+      return initialState;
     case "MENU":
       return {
         backgroundColor: "bg-transparent",

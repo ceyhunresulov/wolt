@@ -8,7 +8,7 @@ import { useState } from "react";
 
 function SearchBar() {
   const [onFocus, setOnFocus] = useState(false);
-  const [searchValue, setSearchValue] = useState();
+  const [searchValue, setSearchValue] = useState('');
 
   const onHandleChange = (e) => {
     setSearchValue(e.target.value);

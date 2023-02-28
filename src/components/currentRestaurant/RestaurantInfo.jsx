@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 
 function RestaurantInfo() {
   const restaurant = useSelector((state) => state.restaurants)[0];
-  console.log(restaurant)
   return (
     <div className="text-thirdColor">
       <h1 className="text-xl font-bold mb-8">Restoran məlumatları</h1>
