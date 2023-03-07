@@ -5,6 +5,6 @@
 
 
 * ### React
-### * Redux
-### * TailwindCss
-### * Responsive design
+* ### Redux
+* ### TailwindCss
+* ### Responsive design
