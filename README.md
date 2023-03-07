@@ -4,7 +4,7 @@
 ![](https://github.com/ceyhunresulov/wolt/blob/master/src/images/wolt.png)
 
 
-* React
-### + Redux
-### -TailwindCss
-### -Responsive design
+### * React
+### * Redux
+### * TailwindCss
+### * Responsive design
