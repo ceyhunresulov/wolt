@@ -10,18 +10,17 @@ function FirstSection() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const [restaurant] = useSelector((state) => state.restaurants);
+  const basket = useSelector((state) => state.basket);
   const [scroll, setScroll] = useState(false);
 
-
-  const openOrdersModal=()=>{
-    dispatch(modalOrdersAction())
-  }
+  const openOrdersModal = () => {
+    dispatch(modalOrdersAction());
+  };
 
   useEffect(() => {
     window.scrollTo(window.pageYOffset, 0);
     dispatch(getCurrentRestaurant(+id));
-    dispatch(menuHeaderStyleAction());
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     const checkScroll = () => {
@@ -33,7 +32,6 @@ function FirstSection() {
 
     return () => window.removeEventListener("scroll", checkScroll);
   }, []);
-
   return (
     <div
       style={{
@@ -44,12 +42,14 @@ function FirstSection() {
       <div className="w-full h-full bg-gray-900 opacity-40 absolute left-0 top-0"></div>
 
       <div
-        className={`w-full fixed bottom-6  lg:h-18 z-20 flex box-border left-0 justify-center ${
-          scroll ? "lg:fixed lg:top-0 lg:bg-white border-b" : "lg:absolute lg:top-20"
+        className={`w-full fixed bottom-6  lg:h-18 flex box-border left-0 justify-center ${
+          scroll
+            ? "lg:fixed lg:top-0 lg:bg-white lg:border-b z-20"
+            : "lg:absolute lg:top-20"
         }`}
       >
         <div
-          className={`w-desktop lg:w-smTablet hidden lg:flex transition-all ease-in duration-300 border-[#2021251f] border-white  justify-between items-center h-full ${
+          className={`w-mobil md:w-desktop lg:w-smTablet flex transition-all ease-in duration-300  justify-between items-center h-full ${
             scroll ? "text-thirdColor" : "text-white"
           }`}
         >
@@ -68,20 +68,22 @@ function FirstSection() {
           </div>
           <div className="w-full lg:w-1/3 flex justify-end">
             <button
-            onClick={openOrdersModal}
+              onClick={openOrdersModal}
               className={`bg-firstColor text-white h-12 lg:h-14 w-full lg:w-64 rounded-lg px-4 box-border flex justify-between items-center ${
-                false ? "invisible" : ""
+                basket.length === 0 ? "invisible" : ""
               }`}
             >
               <div>
                 <span className="bg-white text-firstColor font-semibold px-2 rounded-full">
-                  {/* {orders.reduce((init, curr) => init + curr.count, 0)} */}3
+                  {basket.reduce((init, curr) => init + curr.count, 0)}
                 </span>
                 <span className="font-semibold ml-2">Sifarişə baxın</span>
               </div>
               <span className="font-semibold">
-                {/* {orders.reduce((init, curr) => init + curr.price * curr.count, 0)} */}
-                7.00 AZN
+                {basket
+                  .reduce((init, curr) => init + curr.price * curr.count, 0)
+                  .toFixed(2)}{" "}
+                AZN
               </span>
             </button>
           </div>
@@ -89,7 +91,7 @@ function FirstSection() {
       </div>
 
       <div
-        className={`w-desktop lg:w-smTablet h-1/2 absolute bottom-0 flex flex-col items-start justify-between pb-8 lg:pb-20 box-border`}
+        className={`w-mobil md:w-desktop lg:w-smTablet h-1/2 absolute bottom-0 flex flex-col items-start justify-between pb-8 lg:pb-20 box-border`}
       >
         <h1 className="font-fredoka text-5xl sm:text-6xl lg:text-8xl text-white">
           {restaurant.name}

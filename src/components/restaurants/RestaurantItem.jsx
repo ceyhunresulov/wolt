@@ -3,9 +3,6 @@ import { IoBicycleSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 function RestaurantItem({ img, name, desc, courierMoney, restaurant,id }) {
-  const goToRestaurant = () => {
-    localStorage.setItem("currentRestaurant", JSON.stringify(restaurant));
-  };
   return (
     <Link to={`/${id}`} className="rest-card group">
       <div className="w-full h-2/3 md:h-3/5 overflow-hidden">

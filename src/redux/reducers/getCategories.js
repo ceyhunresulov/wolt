@@ -5,7 +5,7 @@ const getCategoriesReducer = (state = categories, action) => {
     case "GET_CATEGORIES":
       return categories;
     case "GET_CURRENT_CATEGORIES":
-      return [...state.filter((item) => item.restId.includes(action.payload))];
+      return categories.filter((item) => item.restId.includes(action.payload));
     default:
       return state;
   }

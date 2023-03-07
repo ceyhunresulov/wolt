@@ -5,6 +5,14 @@
 @tailwind utilities;
 
 @layer base {
+  input:-webkit-autofill {
+    border: none;
+    -webkit-text-fill-color: black;
+    -webkit-box-shadow: 0 0 0px 1000px #253341 inset;
+    box-shadow: 0 0 0px 1000px #ffff inset;
+    transition: background-color 5000s ease-in-out 0s;
+    color: white;
+  }
   ::-webkit-scrollbar {
     width: 0px;
     height: 0;

@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import WoltLogo from "../logo/WoltLogo";
 import Nav from "./Nav";
 
@@ -41,9 +42,10 @@ const navData = [
 ];
 
 function Footer() {
+  const style=useSelector(state=>state.style)
   return (
     <div className="min-h-96 py-10 box-border bg-bgFourthColor flex items-center justify-center mt-6 relative z-20">
-      <div className="w-desktop lg:w-smTablet mx-auto md:flex justify-between">
+      <div className={`w-mobil md:w-desktop  mx-auto md:flex justify-between ${style.width}`}>
         <div className="mb-12 md:mb-0">
           <WoltLogo dark={false}/>
           <div className="flex md:block">

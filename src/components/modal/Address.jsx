@@ -7,7 +7,7 @@ function Address() {
     <div className="mt-6 h-[80vh] flex flex-col justify-between">
       <div>
         <h1 className="text-3xl font-semibold mb-4">Yeni ünvan əlavə edin</h1>
-        <form onSubmit={(e)=>e.preventDefault()} className="w-full">
+        <form onSubmit={(e) => e.preventDefault()} className="w-full">
           <label
             htmlFor="select"
             className="h-[52px] px-3.5 box-border relative outline-2 outline-firstColor focus-within:outline hover:outline border-2 transition-all ease-in duration-100 rounded-lg w-full cursor-pointer flex flex-col justify-end group mb-2"

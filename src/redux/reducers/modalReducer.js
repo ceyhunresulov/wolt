@@ -18,7 +18,7 @@ const modalReducer = (state = initialState, action) => {
     case "ADD_ORDER_MODAL":
       return { ...initialState, open: true, order: true };
     case "CLOSE_MODAL":
-      return initialState;
+      return { ...state, open: false };
     default:
       return state;
   }

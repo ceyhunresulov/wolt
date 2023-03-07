@@ -1,11 +1,17 @@
 import { restaurants } from "../../database/restaurants";
 
-const getRestaurantsReducer = (state = restaurants, action) => {
+const initialState =
+  JSON.parse(localStorage.getItem("restaurant")) || restaurants;
+
+const getRestaurantsReducer = (state = initialState, action) => {
   switch (action.type) {
     case "GET_RESTAURANTS":
+      localStorage.removeItem("restaurant");
       return restaurants;
     case "GET_CURRENT_RESTAURANT":
-      return [...state.filter((rest) => rest.id === action.payload)];
+      const currRest = restaurants.filter((rest) => rest.id === action.payload);
+      localStorage.setItem("restaurant", JSON.stringify(currRest));
+      return currRest;
     default:
       return state;
   }

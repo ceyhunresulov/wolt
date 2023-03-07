@@ -11,12 +11,13 @@ function Products() {
   const products = useSelector((state) => state.products);
 
   useEffect(() => {
+    console.log(id);
     dispatch(getProductsAction(+id));
-  }, []);
+  }, [id]);
   return (
     <div className="mt-20 lg:mt-0">
       {currentCategories.map((category) => (
-        <div key={category.id} id={category.name} className='pt-16 lg:pt-20'>
+        <div key={category.id} id={category.name} className="pt-16 lg:pt-20">
           <h2
             key={category.id}
             className="font-fredoka text-thirdColor !font-light text-xl transition-all ease-linear duration-500 uppercase mb-8 lg:text-2xl "

@@ -28,6 +28,19 @@ const headerStyleReducer = (state = initialState, action) => {
         width: "lg:w-smTablet",
         searchWidth: "xl:4/5",
       };
+    case "PAYMENT":
+      return {
+        backgroundColor: "bg-white",
+        logoColor: true,
+        textColor: "text-thirdColor",
+        bgSearch: "bg-bgSecondary",
+        customerBox: "hidden",
+        position: "static",
+        border: "md:border",
+        placeholder: "",
+        width: " xl:w-tablet",
+        searchWidth: "xl:w-[55%]",
+      };
     default:
       return state;
   }

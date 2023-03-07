@@ -1,14 +1,21 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { modalAddOrderAction } from "../../redux/actions/modalAction";
-import { getCurrentProductAction } from "../../redux/actions/productsAction";
+import {
+  getCurrentProductAction,
+  updateCurrentProductAction,
+} from "../../redux/actions/productsAction";
 
 function ProductItems({ product, restId }) {
   const dispatch = useDispatch();
+  const basket = useSelector((state) => state.basket);
 
   const openOrderModal = () => {
+    const addedProduct = basket.find((item) => item.id === product.id);
     dispatch(modalAddOrderAction());
-    dispatch(getCurrentProductAction({ proId: product.id, restId }));
+
+    if (addedProduct) dispatch(updateCurrentProductAction(addedProduct));
+    else dispatch(getCurrentProductAction({ proId: product.id, restId }));
   };
   return (
     <div
@@ -24,10 +31,10 @@ function ProductItems({ product, restId }) {
           </h3>
           <div className="text-sm sm:text-base">
             <span className="text-red font-semibold block mb-2">
-              {product.price.find((item) => item.id === restId)?.value} AZN
+              {parseFloat(product.price.find((item) => item.id === restId)?.value).toFixed(2)} AZN
             </span>
             <span className="text-secondaryColor line-through">
-              {product.price.find((item) => item.id === restId)?.value + 2.5}{" "}
+              {(parseFloat(product.price.find((item) => item.id === restId)?.value + 2.5)).toFixed(2)}{" "}
               AZN
             </span>
           </div>

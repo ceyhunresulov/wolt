@@ -27,7 +27,7 @@ function Nav() {
     window.addEventListener("scroll", onScroll);
 
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [id]);
 
   return (
     <div ref={nav} className="mt-8 lg:mt-0 lg:w-2/12 ">

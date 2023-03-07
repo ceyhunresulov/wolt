@@ -85,7 +85,7 @@ function Categories() {
       >
         {categories.map((category) => (
           <SwiperSlide key={category.id}>
-            <CategoryItem name={category.name} img={category.image} />
+            <CategoryItem name={category.name} img={category.image} countRest={category.restId.length} />
           </SwiperSlide>
         ))}
       </Swiper>

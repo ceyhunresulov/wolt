@@ -36,7 +36,7 @@ function Logo({ address, logoColor, customerBox }) {
             : "h-[57px] xs:h-[61px] md:h-full"
         }`}
       >
-        <div className="flex items-center  sm:w-tablet w-desktop md:w-auto group">
+        <div className="flex items-center w-mobil lg:w-desktop md:w-auto group">
           <div className="bg-bgFirst group-hover:bg-bgFirstHover w-8 h-8 lg:w-10 lg:h-10 rounded-full flex items-center justify-center  transition ease-linear duration-200">
             <IoLocation className="text-2xl text-firstColor" />
           </div>

@@ -7,11 +7,17 @@ module.exports = {
       fredoka: ["Fredoka One, cursive"],
     },
     extend: {
+      scale: {
+        'flip': '-1',
+      },
+      boxShadow: {
+        "3xl": "0px -20px 50px -15px rgba(0, 0, 0, 0.3)",
+      },
       width: {
         desktop: "96%",
-        mobil: "93%",
-        tablet: "90%",
+        mobil: "91%",
         smTablet: "1100px",
+        tablet: '1280px'
       },
       screens: {
         xs: "450px",

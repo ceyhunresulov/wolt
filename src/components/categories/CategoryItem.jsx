@@ -1,4 +1,4 @@
-function CategoryItem({ name, img }) {
+function CategoryItem({ name, img, countRest }) {
   return (
     <li
       className={`h-full rounded-lg overflow-hidden shadow cursor-pointer hover:scale-[1.03] transition-all duration-200 ease-in group`}
@@ -14,7 +14,9 @@ function CategoryItem({ name, img }) {
         <h3 className="text-lg font-semibold text-thirdColor mb-[2px]">
           {name}
         </h3>
-        <span className="text-sm text-secondaryColor mt-[2px]">100 məkan</span>
+        <span className="text-sm text-secondaryColor mt-[2px]">
+          {countRest} məkan
+        </span>
       </div>
     </li>
   );

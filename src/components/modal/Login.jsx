@@ -1,8 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook, BsApple } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { addUserAction } from "../../redux/actions/userAction";
+import { modalCloseAction } from "../../redux/actions/modalAction";
 
 function Login() {
+  const [loginValue, setLoginValue] = useState("");
+  const dispatch=useDispatch()
+
+  const login = (e) => {
+    console.log(loginValue)
+    e.preventDefault();
+    dispatch(addUserAction(loginValue))
+    setLoginValue('')
+    dispatch(modalCloseAction())
+  };
+
   return (
     <div className="mt-12">
       <h1 className="font-fredoka text-3xl font-light mb-8">
@@ -47,22 +61,31 @@ function Login() {
           <span className="border w-1/4 bg-thirdColor "></span>
         </div>
 
-        <form className="w-full">
+        <form onSubmit={login} className="w-full">
           <label
             htmlFor="email"
             className="h-[52px] px-3.5 box-border relative outline-2 outline-firstColor focus-within:outline focus-within:outline-[3px] hover:outline border-2 transition-all ease-in duration-100 rounded-lg w-full hover:cursor-text flex flex-col justify-end group mb-4"
           >
             <input
+              onChange={(e) => setLoginValue(e.target.value)}
               type="email"
               id="email"
-              className="text-base peer outline-none py-1"
+              value={loginValue}
+              className="text-base peer select-auto outline-none py-1"
             />
-            <span className="text-base text-secondaryColor absolute top-1/2 -translate-y-1/2 peer-invalid:top-2 peer-invalid:text-xs peer-focus:top-3 peer-focus:text-xs transition-all ease-linear duration-100">
+            <span
+              className={`text-base text-secondaryColor absolute top-1/2 -translate-y-1/2 peer-focus:top-3 peer-focus:text-xs transition-all ease-linear duration-100 ${
+                loginValue ? "top-3 text-xs" : ""
+              }`}
+            >
               E-poçt
             </span>
           </label>
 
-          <button className="w-full h-[52px] bg-firstColor hover:bg-firstColorLight transition-all ease-in duration-150 text-center text-white font-semibold rounded-lg ">
+          <button
+            type="submit"
+            className="w-full h-[52px] bg-firstColor hover:bg-firstColorLight transition-all ease-in duration-150 text-center text-white font-semibold rounded-lg "
+          >
             Növbəti
           </button>
         </form>

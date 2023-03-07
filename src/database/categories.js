@@ -24,12 +24,6 @@ export const categories = [
     image: "cat4.avif",
   },
   {
-    id: 5,
-    restId: [6, 8],
-    name: "Dondurma",
-    image: "cat5.avif",
-  },
-  {
     id: 6,
     restId: [3, 5],
     name: "Dürümlər",
