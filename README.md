@@ -1,6 +1,6 @@
 # Wolt Clone
 
-## -React
-## -Redux
-## -TailwindCss
-## -Responsive design
+### -React
+### -Redux
+### -TailwindCss
+### -Responsive design
